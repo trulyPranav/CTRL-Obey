@@ -106,9 +106,11 @@ def jail_mouse_to_center():
     screenWidth, screenHeight = pyautogui.size()
     centerX, centerY = screenWidth // 2, screenHeight // 2
     def move_mouse_forever():
-        while lock_active and not timer_done:
-            pyautogui.moveTo(centerX + random.randint(-5, 5), centerY + random.randint(-5, 5))
-            time.sleep(0.1)
+        while lock_active:
+            x = max(10, centerX + random.randint(-5, 5))
+            y = max(10, centerY + random.randint(-5, 5))
+            pyautogui.moveTo(x, y)
+            time.sleep(0.5)
     threading.Thread(target=move_mouse_forever, daemon=True).start()
 
 def start_fake_typing_animation(window):
