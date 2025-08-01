@@ -40,11 +40,9 @@ def start_focus_session():
     if not duration:
         return
 
-    # Launch the app
     proc = subprocess.Popen(exe_path.get())
     time.sleep(3)
 
-    # Get hwnd + title
     try:
         hwnd = win32gui.GetForegroundWindow()
         target_hwnd = hwnd
@@ -107,6 +105,24 @@ def jail_mouse_to_center():
             time.sleep(0.1)
     threading.Thread(target=move_mouse_forever, daemon=True).start()
 
+def start_fake_typing_animation(window):
+    output = tk.Text(window, bg='black', fg='green', insertbackground='green', font=("Courier", 12), height=10)
+    output.pack(pady=20)
+    gibberish_lines = [
+        "Establishing remote connection to NASA...",
+        "Bypassing 4096-bit RSA encryption...",
+        "Tracing IP... Found location: 127.0.0.1",
+        "Injecting Python ransomware...",
+        "Installing 'AmongUsOS'...",
+        "Access granted: Administrator privileges stolen.",
+    ]
+    def type_line(idx=0):
+        if idx < len(gibberish_lines):
+            output.insert(tk.END, gibberish_lines[idx] + "\n")
+            output.see(tk.END)
+            window.after(1200, type_line, idx + 1)
+    type_line()
+
 def show_lock_screen():
     global lock_screen, lock_active, penalty_time
     if lock_active or timer_done:
@@ -122,7 +138,7 @@ def show_lock_screen():
     lock_screen.attributes('-fullscreen', True)
     lock_screen.attributes('-topmost', True)
     lock_screen.configure(bg='black')
-    lock_screen.protocol("WM_DELETE_WINDOW", lambda: None)
+    lock_screen.overrideredirect(True)
 
     canvas = tk.Canvas(lock_screen, bg="black", highlightthickness=0)
     canvas.pack(fill="both", expand=True)
@@ -136,6 +152,19 @@ def show_lock_screen():
 
     animate_hacker_text(label, hacker_phrases)
     jail_mouse_to_center()
+    start_fake_typing_animation(lock_screen)
+
+    # Moving fake close button
+    fake_close = tk.Button(lock_screen, text="✖", font=("Arial", 18), fg="white", bg="red", relief="flat", bd=0, padx=10, pady=5)
+    fake_close.place(x=100, y=100)
+
+    def move_button(event=None):
+        x = random.randint(0, width - 100)
+        y = random.randint(0, height - 50)
+        fake_close.place(x=x, y=y)
+
+    fake_close.bind("<Enter>", move_button)
+    fake_close.bind("<Button-1>", lambda e: move_button())
 
     threading.Thread(target=listen_for_unlock, daemon=True).start()
 
@@ -151,16 +180,13 @@ def hide_lock_screen():
     try:
         if target_hwnd and win32gui.IsWindow(target_hwnd):
             shell = win32com.client.Dispatch("WScript.Shell")
-            shell.SendKeys('%')  # Enable SetForegroundWindow
-
+            shell.SendKeys('%')
             win32gui.ShowWindow(target_hwnd, win32con.SW_RESTORE)
             win32gui.SetForegroundWindow(target_hwnd)
-
             rect = win32gui.GetWindowRect(target_hwnd)
             center_x = (rect[0] + rect[2]) // 2
             center_y = (rect[1] + rect[3]) // 2
             pyautogui.click(center_x, center_y)
-
             print(f"✅ Refocused to: {target_window_title}")
         else:
             print("⚠️ Window handle invalid or app was closed.")
