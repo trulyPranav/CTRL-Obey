@@ -21,6 +21,7 @@ lock_screen = None
 keys_pressed = set()
 proc = None
 penalty_time = 0
+timer_label = None
 
 # === GUI Setup ===
 def select_exe():
@@ -57,6 +58,9 @@ def start_focus_session():
 def start_timer(duration):
     global timer_done
     while duration + penalty_time > 0:
+        if timer_label:
+            mins, secs = divmod(duration + penalty_time, 60)
+            timer_label.config(text=f"Time Left: {mins:02}:{secs:02}")
         time.sleep(1)
         duration -= 1
     timer_done = True
@@ -112,7 +116,7 @@ def start_fake_typing_animation(window):
     output.pack(pady=20)
     gibberish_lines = [
         "Establishing remote connection...",
-        "Location Received... Beware and prepare.."
+        "Location Received... Beware and prepare..",
         "Bypassing 4096-bit RSA encryption...",
         "Tracing IP... Found location: 127.0.0.1",
         "IPv6 identified.. Preparing ransomware",
@@ -128,7 +132,7 @@ def start_fake_typing_animation(window):
     type_line()
 
 def show_lock_screen():
-    global lock_screen, lock_active, penalty_time
+    global lock_screen, lock_active, penalty_time, timer_label
     if lock_active or timer_done:
         return
 
@@ -149,6 +153,7 @@ def show_lock_screen():
 
     width = lock_screen.winfo_screenwidth()
     height = lock_screen.winfo_screenheight()
+    
     matrix_rain(canvas, width, height)
     matrix_rain(canvas, width, height)
     matrix_rain(canvas, width, height)
@@ -156,6 +161,13 @@ def show_lock_screen():
     matrix_rain(canvas, width, height)
     matrix_rain(canvas, width, height)
     matrix_rain(canvas, width, height)
+
+    warning_label = tk.Label(lock_screen, text="BEWARE: Switching apps adds 1 minute!", fg="yellow", bg="black", font=("Courier", 20))
+    warning_label.place(relx=0.5, rely=0.1, anchor="center")
+
+    timer_label = tk.Label(lock_screen, text="Time Left: --:--", fg="red", bg="black", font=("Courier", 20))
+    timer_label.place(relx=0.5, rely=0.15, anchor="center")
+
     label = tk.Label(lock_screen, text="", fg="red", bg="black", font=("Courier", 28, "bold"))
     label.place(relx=0.5, rely=0.4, anchor="center")
 
@@ -163,7 +175,6 @@ def show_lock_screen():
     jail_mouse_to_center()
     start_fake_typing_animation(lock_screen)
 
-    # Moving fake close button
     fake_close = tk.Button(lock_screen, text="✖", font=("Arial", 18), fg="white", bg="red", relief="flat", bd=0, padx=10, pady=5)
     fake_close.place(x=100, y=100)
 
@@ -178,13 +189,14 @@ def show_lock_screen():
     threading.Thread(target=listen_for_unlock, daemon=True).start()
 
 def hide_lock_screen():
-    global lock_active, lock_screen, target_hwnd, target_window_title
+    global lock_active, lock_screen, target_hwnd, target_window_title, timer_label
     if lock_screen:
         try:
             lock_screen.after(0, lock_screen.destroy)
         except:
             pass
     lock_active = False
+    timer_label = None
 
     try:
         if target_hwnd and win32gui.IsWindow(target_hwnd):
