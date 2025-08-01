@@ -65,17 +65,19 @@ def start_timer(duration):
 
 # === Lock Screen Features ===
 hacker_phrases = [
-    "Tracing IP...",
-    "Locating brain...",
-    "Injecting firewall bypass...",
-    "Deploying memetic kill agent...",
-    "Sanity check failed... retrying...",
+    "That was a bad choice",
+    "to exit your app...",
+    "You made the choice...",
+    "Not US...",
+    "You shall pay the price...",
+    "Find a way to exit...",
+    "yoU are the only way..."
 ]
 
 def animate_hacker_text(label, phrases, index=0):
     if index < len(phrases):
         label.config(text=phrases[index])
-        lock_screen.after(1500, animate_hacker_text, label, phrases, index + 1)
+        lock_screen.after(5000, animate_hacker_text, label, phrases, index + 1)
 
 def matrix_rain(canvas, width, height):
     chars = "01"
@@ -109,9 +111,11 @@ def start_fake_typing_animation(window):
     output = tk.Text(window, bg='black', fg='green', insertbackground='green', font=("Courier", 12), height=10)
     output.pack(pady=20)
     gibberish_lines = [
-        "Establishing remote connection to NASA...",
+        "Establishing remote connection...",
+        "Location Received... Beware and prepare.."
         "Bypassing 4096-bit RSA encryption...",
         "Tracing IP... Found location: 127.0.0.1",
+        "IPv6 identified.. Preparing ransomware",
         "Injecting Python ransomware...",
         "Installing 'AmongUsOS'...",
         "Access granted: Administrator privileges stolen.",
@@ -120,7 +124,7 @@ def start_fake_typing_animation(window):
         if idx < len(gibberish_lines):
             output.insert(tk.END, gibberish_lines[idx] + "\n")
             output.see(tk.END)
-            window.after(1200, type_line, idx + 1)
+            window.after(6000, type_line, idx + 1)
     type_line()
 
 def show_lock_screen():
@@ -146,7 +150,12 @@ def show_lock_screen():
     width = lock_screen.winfo_screenwidth()
     height = lock_screen.winfo_screenheight()
     matrix_rain(canvas, width, height)
-
+    matrix_rain(canvas, width, height)
+    matrix_rain(canvas, width, height)
+    matrix_rain(canvas, width, height)
+    matrix_rain(canvas, width, height)
+    matrix_rain(canvas, width, height)
+    matrix_rain(canvas, width, height)
     label = tk.Label(lock_screen, text="", fg="red", bg="black", font=("Courier", 28, "bold"))
     label.place(relx=0.5, rely=0.4, anchor="center")
 
