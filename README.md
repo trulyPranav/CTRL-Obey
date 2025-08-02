@@ -28,7 +28,7 @@ Put together the clues, drag your mouse as far as you can, press any keys you li
 ONE LOST MINUTE IS ADDED TO YOUR PRO(blem)DUCTIVITY!<br>
 Well, until you exit and focus, it's your game! 😈<br>
 
-## Technical Details
+# Technical Details
 ### Technologies/Components Used
 For Software:
 - **Languages used**: Python 😈
