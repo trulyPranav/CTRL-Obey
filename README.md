@@ -80,6 +80,7 @@ WARNING: KEEP THE APP YOU CHOOSE AND CMD OPEN IF RUNNING WITHOUT .exe SETUP. ELS
 - Changing screens would app an extra 1min to the overall timer set by the user
 - Use the HotKey "u" to switch back to the app selected
 - While installing and running the .exe, if selected app is closed, just close the GUI from tabbar
+- All the green texts shown in the lower box is nothing but gibberish (what even is AmongUsOS?!)
 - ALT + F4 won't work. Instead, it would add more time, a minute to be specific.
 - While running the script, use a venv, keep the **terminal** and the **app** selected open:
     - If anything occurs, **Ctrl + C** the cmd
