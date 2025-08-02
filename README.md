@@ -59,12 +59,15 @@ WARNING: KEEP THE APP YOU CHOOSE AND CMD OPEN IF RUNNING WITHOUT .exe SETUP. ELS
 
 # Screenshots
 ![Screenshot1](./assets/browse_app.png)
+<br>
 *User to browse and input an executable app to focus on*
 
 ![Screenshot2](./assets/set_time.png)
+<br>
 *User sets his deadly timer 😈*
 
 ![Screenshot3](./assets/blue_hell.png)
+<br>
 *Part of the Hell Blurr 😈*
 
 # Diagrams
@@ -74,10 +77,8 @@ WARNING: KEEP THE APP YOU CHOOSE AND CMD OPEN IF RUNNING WITHOUT .exe SETUP. ELS
 ### Project Demo
 # Video
 (Link to Demo Video)[https://drive.google.com/file/d/1sGuiiLnLPnjFxOXpnBbHWtN_WWBaPwlR/view?usp=sharing]
-*The video demonstrates the working of CTRL+Obey. From launching the app, until viewing the Hell Blur mechanisms*
+*The video demonstrates the working of CTRL+Obey. From launching the app, being "productive", until viewing the Hell Blur mechanisms. Currently only three ways exists to exit the Hell Blur 😈: Timer Ends, HOTKEYYYYYYY and the Tab Closing(until we background this task 😈)*
 
-# Additional Demos
-[Add any extra demo materials/links]
 
 ## Team Contributions
  - Pranav M:
