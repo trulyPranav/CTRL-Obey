@@ -73,8 +73,8 @@ WARNING: KEEP THE APP YOU CHOOSE AND CMD OPEN IF RUNNING WITHOUT .exe SETUP. ELS
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+(Link to Demo Video)[https://drive.google.com/file/d/1sGuiiLnLPnjFxOXpnBbHWtN_WWBaPwlR/view?usp=sharing]
+*The video demonstrates the working of CTRL+Obey. From launching the app, until viewing the Hell Blur mechanisms*
 
 # Additional Demos
 [Add any extra demo materials/links]
