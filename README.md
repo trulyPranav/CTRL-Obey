@@ -55,7 +55,7 @@ python ctrl+obey.py
 ```
 ```
 WARNING: KEEP THE APP YOU CHOOSE AND CMD OPEN IF RUNNING WITHOUT .exe SETUP. ELSE.... 😈.....
-(Okay real warning: Don't close the app you choose or cmd, you might get trapped in the maze forever!(Just Restart if that happens ;)))
+(Okay real warning: Don't close the app you choose or cmd, you might get trapped in the maze forever!(Just Restart if that happens ;))
 ```
 
 # Screenshots
@@ -69,7 +69,7 @@ WARNING: KEEP THE APP YOU CHOOSE AND CMD OPEN IF RUNNING WITHOUT .exe SETUP. ELS
 *Add caption explaining what this shows*
 
 # Diagrams
-![Workflow]()
+![Workflow](./assets/ctrlobeyworkflow.png)
 *Add caption explaining your workflow*
 
 # Build Photos
