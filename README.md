@@ -3,7 +3,6 @@
 
 # CTRL + OBEY 😈
 
-## Basic Details
 ### Team Name: The Pantheon
 
 ### Team Members
@@ -11,8 +10,8 @@
 - Member 2: [Joe George](https://github.com/malignant-18) - Model Engineering College
 
 ### Project Description
-Turns your choice of a focus app to hell(or heaven if you're that good). Ctrl + Obey - Stay Focused or Else 😈
-Get time as a reward, well what more to ask? 😈
+Turns your choice of an app(that you want to focus on) to hell(or heaven if you're that good). Ctrl + Obey - Stay Focused or Else 😈<br>
+Get **_time as a reward_**, well what more to ask? 😈
 
 ### The Problem (that doesn't exist)
 Ever find that random surge of motivation, where you feel you can take down the world with just a system?!<br>
@@ -78,9 +77,10 @@ WARNING: KEEP THE APP YOU CHOOSE AND CMD OPEN IF RUNNING WITHOUT .exe SETUP. ELS
 
 
 # Fun Apart - The Reality
+- Changing screens would app an extra 1min to the overall timer set by the user
 - Use the HotKey "u" to switch back to the app selected
 - While installing and running the .exe, if selected app is closed, just close the GUI from tabbar
-- ALT + F4 won't work. Instead, it would add more time.
+- ALT + F4 won't work. Instead, it would add more time, a minute to be specific.
 - While running the script, use a venv, keep the **terminal** and the **app** selected open:
     - If anything occurs, **Ctrl + C** the cmd
     - If no other options persist, restart from **Ctrl + Alt + Del**
