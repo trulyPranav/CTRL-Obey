@@ -79,19 +79,44 @@ hacker_phrases = [
 ]
 
 def animate_hacker_text(label, phrases, index=0):
-    if index < len(phrases):
+    def blink_text(text, count=0):
+        if count < 10:
+            label.config(text=text if count % 2 == 0 else "")
+            lock_screen.after(300, blink_text, text, count + 1)
+        else:
+            label.config(text=phrases[index])
+            lock_screen.after(4500, animate_hacker_text, label, phrases, index + 1)
+
+    if index == 0:
+        blink_text("⚠ INTRUSION DETECTED ⚠")
+    elif index < len(phrases):
         label.config(text=phrases[index])
-        lock_screen.after(5000, animate_hacker_text, label, phrases, index + 1)
+        lock_screen.after(4000, animate_hacker_text, label, phrases, index + 1)
 
 def matrix_rain(canvas, width, height):
     chars = "01"
     drops = [0 for _ in range(width // 10)]
+
     def draw():
         canvas.delete("all")
         for i in range(len(drops)):
-            char = random.choice(chars)
-            canvas.create_text(i * 10, drops[i] * 10, text=char, fill="lime", font=("Courier", 12, "bold"))
+            for j in range(0, random.randint(1, 3)):
+                char = random.choice(chars)
+                x = i * 10
+                y = (drops[i] + j) * 10
+                color = random.choice(["#00FF00", "#33FF33", "#00CC00"])
+                canvas.create_text(x, y, text=char, fill=color, font=("Lucida Console", 12, "bold"))
             drops[i] = drops[i] + 1 if drops[i] * 10 < height else 0
+
+        # Flicker random rectangles
+        if random.random() < 0.05:
+            for _ in range(5):
+                x1 = random.randint(0, width)
+                y1 = random.randint(0, height)
+                x2 = x1 + random.randint(10, 30)
+                y2 = y1 + random.randint(5, 15)
+                canvas.create_rectangle(x1, y1, x2, y2, fill="white", outline="")
+
         if not timer_done:
             canvas.after(50, draw)
     draw()
@@ -130,7 +155,7 @@ def start_fake_typing_animation(window):
         if idx < len(gibberish_lines):
             output.insert(tk.END, gibberish_lines[idx] + "\n")
             output.see(tk.END)
-            window.after(6000, type_line, idx + 1)
+            window.after(4000, type_line, idx + 1)
     type_line()
 
 def show_lock_screen():
@@ -159,18 +184,15 @@ def show_lock_screen():
     matrix_rain(canvas, width, height)
     matrix_rain(canvas, width, height)
     matrix_rain(canvas, width, height)
-    matrix_rain(canvas, width, height)
-    matrix_rain(canvas, width, height)
-    matrix_rain(canvas, width, height)
-    matrix_rain(canvas, width, height)
 
-    warning_label = tk.Label(lock_screen, text="BEWARE: Switching apps adds 1 minute!", fg="yellow", bg="black", font=("Courier", 20))
-    warning_label.place(relx=0.5, rely=0.1, anchor="center")
 
-    timer_label = tk.Label(lock_screen, text="Time Left: --:--", fg="red", bg="black", font=("Courier", 20))
-    timer_label.place(relx=0.5, rely=0.15, anchor="center")
+    warning_label = tk.Label(lock_screen, text="⚠ SWITCHING APPS ADDS TIME ⚠", fg="#FF0000", bg="black", font=("Consolas", 22, "bold"))
+    warning_label.place(relx=0.5, rely=0.08, anchor="center")
 
-    label = tk.Label(lock_screen, text="", fg="red", bg="black", font=("Courier", 28, "bold"))
+    timer_label = tk.Label(lock_screen, text="Time Left: --:--", fg="lime", bg="black", font=("Lucida Console", 20, "bold"))
+    timer_label.place(relx=0.5, rely=0.14, anchor="center")
+
+    label = tk.Label(lock_screen, text="", fg="red", bg="black", font=("Consolas", 30, "bold"))
     label.place(relx=0.5, rely=0.4, anchor="center")
 
     animate_hacker_text(label, hacker_phrases)
