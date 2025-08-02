@@ -40,7 +40,6 @@ For Software:
 - **Libraries used**: PyAutoGUI, PyGetWindow, pygame, ffpyplayer, MouseInfo, keyboard, PyScreeze
 - **Tools used**: VS CODE, a bit of cmd(terminal ofc), and baked in GitHub!
 
-### Implementation
 # Installation
 Install the latest release or if you're lazy(like us) install it [here](https://github.com/trulyPranav/CTRL-Obey/releases/download/v1.0.0/ctrl+obey.exe)
 ```
