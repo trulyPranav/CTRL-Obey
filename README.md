@@ -59,18 +59,18 @@ WARNING: KEEP THE APP YOU CHOOSE AND CMD OPEN IF RUNNING WITHOUT .exe SETUP. ELS
 ```
 
 # Screenshots
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot1](./assets/browse_app.png)
+*User to browse and input an executable app to focus on*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot2](./assets/set_time.png)
+*User sets his deadly timer 😈*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot3](./assets/blue_hell.png)
+*Part of the Hell Blurr 😈*
 
 # Diagrams
 ![Workflow](./assets/ctrlobeyworkflow.png)
-*Add caption explaining your workflow*
+*Workflow showing the base idea of project, from app selection to different actions*
 
 # Build Photos
 ![Components](Add photo of your components here)
@@ -100,5 +100,3 @@ Made with ❤️ at TinkerHub Useless Projects
 
 ![Static Badge](https://img.shields.io/badge/TinkerHub-24?color=%23000000&link=https%3A%2F%2Fwww.tinkerhub.org%2F)
 ![Static Badge](https://img.shields.io/badge/UselessProjects--25-25?link=https%3A%2F%2Fwww.tinkerhub.org%2Fevents%2FQ2Q1TQKX6Q%2FUseless%2520Projects)
-
-
