@@ -72,16 +72,6 @@ WARNING: KEEP THE APP YOU CHOOSE AND CMD OPEN IF RUNNING WITHOUT .exe SETUP. ELS
 ![Workflow](./assets/ctrlobeyworkflow.png)
 *Workflow showing the base idea of project, from app selection to different actions*
 
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
-
 ### Project Demo
 # Video
 [Add your demo video link here]
@@ -91,18 +81,12 @@ WARNING: KEEP THE APP YOU CHOOSE AND CMD OPEN IF RUNNING WITHOUT .exe SETUP. ELS
 [Add any extra demo materials/links]
 
 ## Team Contributions
-Pranav M
-
-Developed the core Python script to monitor and detect foreground applications.
-
-Implemented logic to control keyboard and mouse access for enhanced control.
-
-
-Joe George
-
-Designed and implemented the Tkinter-based user interface for alert popups.
-
-Created an animated warning screen to enhance user feedback and visual alert system.
+ - Pranav M:
+    - Developed the core Python script to monitor and detect foreground applications.
+    - Implemented logic to control keyboard and mouse access for enhanced control.
+- Joe George
+    - Designed and implemented the Tkinter-based user interface for alert popups.
+    - Created an animated warning screen to enhance user feedback and visual alert system.
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
