@@ -91,9 +91,18 @@ WARNING: KEEP THE APP YOU CHOOSE AND CMD OPEN IF RUNNING WITHOUT .exe SETUP. ELS
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+Pranav M
+
+Developed the core Python script to monitor and detect foreground applications.
+
+Implemented logic to control keyboard and mouse access for enhanced control.
+
+
+Joe George
+
+Designed and implemented the Tkinter-based user interface for alert popups.
+
+Created an animated warning screen to enhance user feedback and visual alert system.
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
