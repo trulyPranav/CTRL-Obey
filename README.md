@@ -42,7 +42,7 @@ For Software:
 
 ### Implementation
 # Installation
-Install the latest re;ease or if you're lazy(like us) install it (here)[]
+Install the latest release or if you're lazy(like us) install it [here](https://github.com/trulyPranav/CTRL-Obey/releases/download/v1.0.0/ctrl+obey.exe)
 ```
 WARNING: Find the hotkey. If anything goes wrong, close the GUI from the tabbar.
 WE WON'T BE THIS CONSIDERATE NEXT TIME! 
@@ -58,10 +58,7 @@ WARNING: KEEP THE APP YOU CHOOSE AND CMD OPEN IF RUNNING WITHOUT .exe SETUP. ELS
 (Okay real warning: Don't close the app you choose or cmd, you might get trapped in the maze forever!(Just Restart if that happens ;)))
 ```
 
-### Project Documentation
-For Software:
-
-# Screenshots (Add at least 3)
+# Screenshots
 ![Screenshot1](Add screenshot 1 here with proper name)
 *Add caption explaining what this shows*
 
@@ -72,7 +69,7 @@ For Software:
 *Add caption explaining what this shows*
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
+![Workflow]()
 *Add caption explaining your workflow*
 
 # Build Photos
